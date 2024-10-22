@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error - Daily Progress Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f8d7da;
+        color: #721c24;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #ffffff;
+        border: 1px solid #f5c6cb;
+        border-radius: 8px;
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .button {
+        background-color: #721c24;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+      .button:hover {
+        background-color: #5a1219;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚫 Oops! Something Went Wrong</h1>
+      <p>{{ message }}</p>
+      <a href="/" class="button">🔙 Go Back to Home</a>
+    </div>
+  </body>
+</html>

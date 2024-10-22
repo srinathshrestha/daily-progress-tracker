@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Entry - Daily Progress Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+      }
+      h1 {
+        color: #1a73e8;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      p {
+        margin: 10px 0;
+      }
+      button {
+        background-color: #dc3545;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background-color: #c82333;
+      }
+      a {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        color: #1a73e8;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📅 Entry for {{ entry.date }}</h1>
+      <p><strong>Goals:</strong> {{ entry.goals }}</p>
+      <p><strong>Achievements:</strong> {{ entry.achievements }}</p>
+      <p><strong>Challenges:</strong> {{ entry.challenges }}</p>
+      <p><strong>Lessons:</strong> {{ entry.lessons }}</p>
+      <p><strong>Tasks:</strong> {{ entry.tasks }}</p>
+      <p><strong>Notes:</strong> {{ entry.notes }}</p>
+      <p><strong>Mood:</strong> {{ entry.mood }}</p>
+      <p><strong>Reflection:</strong> {{ entry.reflection }}</p>
+
+      <form action="/delete/{{ entry.date }}" method="post">
+        <button type="submit">🗑️ Delete Entry</button>
+      </form>
+      <form action="/update/{{ entry.date }}" method="get">
+        <button type="submit">✏️ Update Entry</button>
+      </form>
+
+      <a href="/">Back to Home</a>
+    </div>
+  </body>
+</html>

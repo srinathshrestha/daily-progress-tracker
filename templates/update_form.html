@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Entry - Daily Progress Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+      }
+      h1 {
+        color: #1a73e8;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      a {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        color: #1a73e8;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>✏️ Update Entry for {{ entry.date }}</h1>
+
+      <form action="/update/{{ entry.date }}" method="post">
+        <label
+          >Goals:
+          <input type="text" name="goals" value="{{ entry.goals }}" required />
+        </label>
+        <label
+          >Achievements:
+          <input
+            type="text"
+            name="achievements"
+            value="{{ entry.achievements }}"
+          />
+        </label>
+        <label
+          >Challenges:
+          <input type="text" name="challenges" value="{{ entry.challenges }}" />
+        </label>
+        <label
+          >Lessons:
+          <input type="text" name="lessons" value="{{ entry.lessons }}" />
+        </label>
+        <label
+          >Tasks:
+          <input type="text" name="tasks" value="{{ entry.tasks }}" />
+        </label>
+        <label
+          >Notes:
+          <input type="text" name="notes" value="{{ entry.notes }}" />
+        </label>
+        <label
+          >Mood:
+          <input
+            type="number"
+            name="mood"
+            value="{{ entry.mood }}"
+            min="1"
+            max="10"
+          />
+        </label>
+        <label
+          >Reflection:
+          <textarea name="reflection">{{ entry.reflection }}</textarea>
+        </label>
+        <button type="submit">Save Changes</button>
+      </form>
+
+      <a href="/">Back to Home</a>
+    </div>
+  </body>
+</html>

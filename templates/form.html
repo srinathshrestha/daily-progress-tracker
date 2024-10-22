@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Progress Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 20px 0;
+            overflow-y: auto;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin-top: 60px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1a73e8;
+        }
+        label {
+            font-weight: 700;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="number"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .back-link {
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            font-weight: 700;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Progress Tracker Form <i class="fas fa-pencil-alt"></i></h1>
+        <form action="/submit" method="post">
+            <label for="date">📅 Date (YYYY-MM-DD):</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="goals">🎯 Goals:</label>
+            <textarea id="goals" name="goals" rows="3" placeholder="List your goals, separated by a comma." required></textarea> <i class="fas fa-bullseye icon"></i>
+
+            <label for="achievements">🏆 Achievements:</label>
+            <textarea id="achievements" name="achievements" rows="3" placeholder="List your achievements, separated by a comma." ></textarea> <i class="fas fa-trophy icon"></i>
+
+            <label for="challenges">⚠️ Challenges:</label>
+            <textarea id="challenges" name="challenges" rows="3" placeholder="List your challenges, separated by a comma." ></textarea> <i class="fas fa-exclamation-triangle icon"></i>
+
+            <label for="lessons">📚 Lessons Learned:</label>
+            <textarea id="lessons" name="lessons" rows="3" placeholder="List your lessons learned, separated by a comma." ></textarea> <i class="fas fa-book icon"></i>
+
+            <label for="tasks">📝 Tasks for Tomorrow:</label>
+            <textarea id="tasks" name="tasks" rows="3" placeholder="List tasks for tomorrow, separated by a comma." ></textarea> <i class="fas fa-tasks icon"></i>
+
+            <label for="notes">🗒️ Notes:</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Add any additional notes."></textarea> <i class="fas fa-sticky-note icon"></i>
+
+            <label for="mood">😊 Mood (1-10):</label>
+            <input type="number" id="mood" name="mood" min="1" max="10" placeholder="Optional">
+
+
+            <label for="reflection">💭 Reflection:</label>
+            <textarea id="reflection" name="reflection" rows="3" placeholder="Describe your feelings." ></textarea> <i class="fas fa-brain icon"></i>
+
+            <input type="submit" value="Submit">
+        </form>
+        <a href="/" class="back-link">🔙 Back to Home</a>
+    </div>
+</body>
+</html>

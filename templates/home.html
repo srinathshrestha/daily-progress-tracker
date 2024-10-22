@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daily Progress Tracker - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+      }
+      h1 {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #1a73e8;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .button-group a {
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 48%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+      .button-group a:hover {
+        background-color: #218838;
+      }
+      .entry-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .entry-list li {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .entry-list li a {
+        text-decoration: none;
+        font-weight: 700;
+        color: #1a73e8;
+      }
+      .entry-list li a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📅 Daily Progress Tracker</h1>
+
+      <div class="button-group">
+        <a href="/add">📝 Add a New Entry</a>
+      </div>
+
+      <h2>📋 Previous Entries</h2>
+      <ul class="entry-list">
+        {% for entry in entries %}
+        <li>
+          <a href="/entries/{{ entry.date }}"
+            >📅 {{ entry.date }} - View Entry</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
